@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+:root {
+  /* Colours */
+  --color-text: #fff;
+  --color-primary: #576cbc;
+  --color-secondary: #19376d;
+  --color-dark: #0b2447;
+  --color-bg: #04152d;
+
+  /* Fonts */
+  --font-roboto: "Roboto";
+  --font-josefin:"josefin";
+  --font-lexend:"Lexend Deca";
+  --font-quantico:"Quantico";
+}

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header-gradient{
+  background: -webkit-linear-gradient(180deg,#1863DEFC, #7456D4FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

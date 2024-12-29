@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Digital Marketing",
+    "imageSrc": "projects/1.svg",
+    "description": "We create seamless, user-friendly mobile apps designed to align with your business goals and boost customer interaction."
+  },
+  {
+    "title": "Mobile App Development",
+    "imageSrc": "projects/2.svg",
+    "description": "We create seamless, user-friendly mobile apps designed to align with your business goals and boost customer interaction."
+  },
+  {
+    "title": "Web Development",
+    "imageSrc": "projects/3.svg",
+    "description": "We create seamless, user-friendly mobile apps designed to align with your business goals and boost customer interaction."
+  },
+  {
+    "title": "Graphics & Video",
+    "imageSrc": "projects/4.svg",
+    "description": "We create seamless, user-friendly mobile apps designed to align with your business goals and boost customer interaction."
+  }
+  
+]
