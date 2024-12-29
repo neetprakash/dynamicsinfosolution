@@ -1,6 +1,4 @@
 import React from "react";
-
-import styles from "./Hero.css";
 import { getImageUrl } from "../../utils";
 
 export const Hero = () => {
