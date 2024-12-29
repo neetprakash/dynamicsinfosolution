@@ -16,5 +16,6 @@ html {
 .header-gradient{
   background: -webkit-linear-gradient(180deg,#1863DEFC, #7456D4FC);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }

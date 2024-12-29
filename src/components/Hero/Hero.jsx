@@ -1,5 +1,6 @@
 import React from "react";
 import { getImageUrl } from "../../utils";
+import './hero.css'
 
 export const Hero = () => {
   return (
