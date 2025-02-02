@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="absolute z-10 flex justify-between items-center px-14 py-8 w-full">
+    <nav className="z-[999] flex justify-between items-center px-14 py-6 w-full bg-[#09090b] fixed">
       <a  href="/">
       <img
          className={styles.title}

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState, useMemo }  from "react";
 
 import { Input } from "@material-tailwind/react";
 import { Textarea } from "@material-tailwind/react";
 import { getImageUrl } from "../../utils";
 import { Button } from "@material-tailwind/react";
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
 
 export const Contact = () => {
+  const [value, setValue] = useState('')
+  const options = useMemo(() => countryList().getData(), [])
+
+  const changeHandler = value => {
+    setValue(value)
+  }
   return (
     <section id="contact" className="px-20">
        <div className="py-12 flex flex-col items-center relative z-10 text-black">
@@ -48,9 +56,14 @@ export const Contact = () => {
   <br />
   <Input variant="standard" label="Contact" placeholder="9999999999"/>
   <br />
+  <div className="relative">
+  <Input variant="standard" label="Country" placeholder="India"/>
+  <Select className="absolute" options={options} value={value} onChange={changeHandler} />
+  </div>
+
   <Textarea variant="standard" label="Message" />
   <br />
-  <Button variant="gradient">Request Proposal</Button>
+  <Button variant="outlined" className="rounded">Request Proposal</Button>
   </div>
 </div>
     </section>

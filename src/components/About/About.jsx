@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./About.module.css";
+import  "./About.css";
 import { getImageUrl } from "../../utils";
 
 export const About = () => {
@@ -16,10 +16,10 @@ export const About = () => {
           <img
             className="w-full"
             src={getImageUrl("projects/s1.png")} alt="about" />
-          <div className="rounded-2xl bg-white p-4 shadow-lg max-w-[300px] absolute bottom-0 right-0">
+          <div className="rounded-2xl bg-white p-4 shadow-lg max-w-[300px] absolute bottom-0 right-0 about_card before:bg-red overflow-hidden">
             <h4 className="font-bold text-2xl mb-4">Goals</h4>
             <div className="flex gap-4 mb-8">
-              <div className="bg-sky-300 w-12 flex items-center justify-center p-2 rounded-full">
+              <div className="bg-blue-50 w-12 flex items-center justify-center p-2 rounded-full">
                 <img src={getImageUrl("projects/Rating.svg")} alt="" />
               </div>
               <div>
@@ -27,8 +27,8 @@ export const About = () => {
                 <p>Clients Around</p>
               </div>
             </div>
-            <div className="flex gap-4">
-              <div className="bg-sky-300 w-12 flex items-center justify-center p-2 rounded-full">
+            <div className="flex gap-4 relative z-10 text-white">
+              <div className="bg-white w-12 flex items-center justify-center p-2 rounded-full">
                 <img src={getImageUrl("projects/Icon.svg")} alt="" />
               </div>
               <div>
