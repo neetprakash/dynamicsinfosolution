@@ -1,7 +1,6 @@
 import React from "react";
 import { getImageUrl } from "../../utils";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
+import './testimony.css'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 export const Testimony = () => {
@@ -31,8 +30,10 @@ export const Testimony = () => {
       infinite={true}
       centerMode={true}
       className="custom-multi-carousel"
+      showDots={true}
+      dotListClass="custom-dot-list-style"
       itemClass={"[&.react-multi-carousel-item--active]:scale-110 [&.react-multi-carousel-item--active]:z-50"}
-      containerClass="p-8"
+      containerClass=""
       >
                 <div className="">
                     <img src={getImageUrl("projects/Border.png")} />

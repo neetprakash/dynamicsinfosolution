@@ -6,13 +6,14 @@ import { getImageUrl } from "../../utils";
 import { Button } from "@material-tailwind/react";
 import Select from 'react-select'
 import countryList from 'react-select-country-list'
+import './Contact.css'
 
 
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
     backgroundColor: "transparent",
-    border:"none",  // Match Material Tailwind input
+    border: "none",  // Match Material Tailwind input
     borderBottom: "1px solid #9e9e9e", // Underline style
     borderRadius: "0px",
     boxShadow: state.isFocused ? "0 0.5px 0 black" : "none",
@@ -21,11 +22,11 @@ const customStyles = {
   placeholder: (provided) => ({
     ...provided,
     display: "none",
-   
+
   }),
-  indicatorContainer:(provided)=>({
+  indicatorContainer: (provided) => ({
     ...provided,
-display:'none'
+    display: 'none'
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -46,9 +47,9 @@ const validationSchema = Yup.object({
     value: Yup.string().required("Country is required"),
   }),
   message: Yup.string()
-  .min(20, "must be at least 20 characters")
-  .max(150, "Name must not exceed 150 characters")
-  .required("required"),
+    .min(20, "must be at least 20 characters")
+    .max(150, "Name must not exceed 150 characters")
+    .required("required"),
 });
 
 
@@ -67,12 +68,12 @@ export const Contact = () => {
   const changeHandler = (e) => {
     setContactForm({ ...contactForm, [e.target.name]: e.target.value });
     console.log(contactForm);
-    
+
   };
   const handleSelectChange = (e) => {
-    setContactForm({ ...contactForm, country: e});
+    setContactForm({ ...contactForm, country: e });
     console.log(contactForm);
-    
+
   };
 
   const handleSubmit = async (e) => {
@@ -80,24 +81,24 @@ export const Contact = () => {
 
     validationSchema
       .validate(contactForm, { abortEarly: false })
-      .then(async() => {
+      .then(async () => {
         // No errors, submit form
         console.log("Form Submitted:", contactForm);
         const formEndpoint = "https://formspree.io/f/xvgzrwol"; // Replace with your Formspree endpoint
 
-    const response = await fetch(formEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(contactForm),
-    });
-console.log(response);
+        const response = await fetch(formEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(contactForm),
+        });
+        console.log(response);
 
-    if (response.ok) {
-      alert("Message sent successfully!");
-      setContactForm({ fullName: "", email: "",contact:"", message: "", country:null });
-    } else {
-      alert("Failed to send message.");
-    }
+        if (response.ok) {
+          alert("Message sent successfully!");
+          setContactForm({ fullName: "", email: "", contact: "", message: "", country: null });
+        } else {
+          alert("Failed to send message.");
+        }
       })
       .catch((err) => {
         // Set errors if validation fails
@@ -108,17 +109,17 @@ console.log(response);
         setErrors(newErrors);
       });
 
-    
-  };
- 
-  return (
-    <section id="contact" className="px-20">
-      <div className="py-12 flex flex-col items-center relative z-10 text-black">
-        <h4 className="text-4xl font-roboto text-center font-bold header-gradient">Contact Us</h4>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div>
 
+  };
+
+  return (
+    <section id="contact" className="p-20">
+      {/* <div className="py-12 flex flex-col items-center relative z-10 text-black">
+        <h4 className="text-4xl font-roboto text-center font-bold header-gradient">Contact Us</h4>
+      </div> */}
+      <div className="grid grid-cols-2 gap-4 lg:gap-8">
+        <div className="max-w-[400px] contactuscontainer relative">
+          <h4 className="text-4xl font-roboto font-bold header-gradient mb-10">Contact Us</h4>
           <div className="flex gap-4 mb-8">
             <div className="bg-sky-300 w-12 flex items-center justify-center p-2 rounded-full">
               <img src={getImageUrl("contact/location.svg")} alt="" />
@@ -146,36 +147,36 @@ console.log(response);
             </div>
           </div>
         </div>
-        <div>
+        <div className="">
+          <h4 className="text-4xl font-roboto mb-10  font-bold header-gradient">Request a proposal</h4>
           <form onSubmit={handleSubmit} >
-          <Input variant="standard" label="Full Name" name="fullName" placeholder="John Doe" value={contactForm.fullName} onChange={changeHandler}/>
-          {errors.fullName && <div className="text-red-500 text-sm">{errors.fullName}</div>}
-          <br />
-          <Input variant="standard" label="Email" name="email" placeholder="John@gmail.com" value={contactForm.email} onChange={changeHandler}/>
-          {errors.email && <div className="text-red-500 text-sm">{errors.email}</div>}
-          <br />
-          <Input variant="standard" label="Contact" name="contact" placeholder="9999999999" value={contactForm.contact} onChange={changeHandler}/>
-          {errors.contact && <div className="text-red-500 text-sm">{errors.contact}</div>}
-          <br />
-          <div className="relative">
-            <label
-          className={`absolute left-0 transition-all duration-200  ${
-            isFocused || contactForm.country ? "top-[-12px] text-[10px] text-black" : "top-2 text-blue-gray-500 text-[0.875rem]"
-          }`}
-        >
-          Country
-        </label>
-            <Select className="absolute" name="country" options={options} value={contactForm.country} onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}  onChange={handleSelectChange}
-            styles={customStyles}
-            components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} />
-          </div>
-          {errors.country && <div className="text-red-500 text-sm">{errors.country}</div>}
-          <br />
-          <Textarea variant="standard" label="Message" name="message" value={contactForm.message} onChange={changeHandler}/>
-          {errors.message && <div className="text-red-500 text-sm">{errors.message}</div>}
-          <br />
-          <Button variant="outlined" className="rounded" type="submit">Request Proposal</Button>
+            <Input variant="standard" label="Full Name" name="fullName" placeholder="John Doe" value={contactForm.fullName} onChange={changeHandler} />
+            {errors.fullName && <div className="text-red-500 text-sm">{errors.fullName}</div>}
+            <br />
+            <Input variant="standard" label="Email" name="email" placeholder="John@gmail.com" value={contactForm.email} onChange={changeHandler} />
+            {errors.email && <div className="text-red-500 text-sm">{errors.email}</div>}
+            <br />
+            <Input variant="standard" label="Contact" name="contact" placeholder="9999999999" value={contactForm.contact} onChange={changeHandler} />
+            {errors.contact && <div className="text-red-500 text-sm">{errors.contact}</div>}
+            <br />
+            <div className="relative">
+              <label
+                className={`absolute left-0 transition-all duration-200  ${isFocused || contactForm.country ? "top-[-12px] text-[10px] text-black" : "top-2 text-blue-gray-500 text-[0.875rem]"
+                  }`}
+              >
+                Country
+              </label>
+              <Select className="absolute" name="country" options={options} value={contactForm.country} onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)} onChange={handleSelectChange}
+                styles={customStyles}
+                components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }} />
+            </div>
+            {errors.country && <div className="text-red-500 text-sm">{errors.country}</div>}
+            <br />
+            <Textarea variant="standard" label="Message" name="message" value={contactForm.message} onChange={changeHandler} />
+            {errors.message && <div className="text-red-500 text-sm">{errors.message}</div>}
+            <br />
+            <Button variant="outlined" className="rounded" type="submit">Request Proposal</Button>
           </form>
         </div>
       </div>

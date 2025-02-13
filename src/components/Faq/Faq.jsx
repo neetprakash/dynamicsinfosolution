@@ -26,7 +26,7 @@ export const Faq = () => {
  
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
   return (
-    <section className="px-20 my-20" id="faq">
+    <section className="px-20 mb-20" id="faq">
          <div className="py-12 flex flex-col items-center relative z-10 text-black">
             <h4 className="text-4xl font-roboto text-center font-bold header-gradient">Frequently Asked Questions</h4>
             <p className="text-center mt-2 lg:max-w-[40%]">Our Partnerships Have Transformed How You Experience 

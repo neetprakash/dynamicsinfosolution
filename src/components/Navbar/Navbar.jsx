@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Button } from "@material-tailwind/react";
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -50,6 +50,7 @@ export const Navbar = () => {
           <li>
             <a href="#faq">FAQ</a>
           </li>
+          <Button variant="filled " className="rounded bg-gradient-to-r from-indigo-500 via-indigo-500 to-purple-500" type="submit">Request Proposal</Button>
         </ul>
         
       </div>

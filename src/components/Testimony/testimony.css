@@ -1,0 +1,22 @@
+.custom-multi-carousel{
+    padding: 4rem 0;
+}
+
+.custom-dot-list-style {
+background-color: rgb(193, 193, 193);
+width: max-content;
+margin: auto;
+height: 5px;
+border-radius: 16px;
+margin-top: 2rem;
+}
+
+.custom-dot-list-style button{
+width: 70px;
+border-radius: 0;
+height: 4px;
+margin: 0;
+}
+.custom-dot-list-style .react-multi-carousel-dot--active{
+background-color: black;
+}

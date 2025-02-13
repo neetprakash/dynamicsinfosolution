@@ -1,0 +1,9 @@
+.contactuscontainer:before {
+    position: absolute;
+    content: '';
+    height: 70%;
+    width: 1px;
+    background: #f6f6f6;
+    right: -50px;
+    top: 88px;
+}

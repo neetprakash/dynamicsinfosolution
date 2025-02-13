@@ -19,3 +19,30 @@ html {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.blackcard {
+  position: relative;
+  /* width: 256px;
+  height: 256px;
+  background-color: white; */
+  border-radius: 8px; /* Adjust for rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.blackcard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #1863DE, #7456D4);
+  border-radius: 8px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  z-index: -1;
+}
+
+/* On hover, show the gradient border */
+.blackcard:hover::before {
+  opacity: 1; /* Make the gradient visible on hover */
+}

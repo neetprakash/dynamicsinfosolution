@@ -8,6 +8,8 @@ import { Projects } from "./components/Projects/Projects";
 import { Services } from "./components/Services/Services";
 import { Testimony } from "./components/Testimony/Testimony";
 import { Footer } from "./components/Footer/Footer";
+import { Industries } from "./components/Industries/Industries";
+import TechnologiesSection from "./components/Technologies/Technologies";
  
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
       <Hero />
       <Services/>
       <About />
-      <Projects />
+      {/* <Projects /> */}
+      <Industries/>
+      <TechnologiesSection/>
       <Testimony />
       <Contact />
       <Faq />

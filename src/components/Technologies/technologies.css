@@ -1,0 +1,8 @@
+.techtab{
+    background: linear-gradient(90deg, rgba(24,99,222,1) 0%, rgba(116,86,212,1) 100%);
+    width: 300px;
+    height: 100%;
+}
+.place-items-start .shadow{
+    background: rgb(4, 133, 255);
+}

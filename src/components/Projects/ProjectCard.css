@@ -1,0 +1,25 @@
+/* .blackcard:hover{
+    box-shadow: rgb(5, 222, 16, 0.16) 0px 1px 4px, rgb(141, 15, 245) 0px 0px 0px 3px;
+} */
+.blackcard {
+position: relative;
+z-index: 1;
+
+}
+
+.blackcard::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #1863DE, #7456D4);
+    border-radius: 8px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    z-index: -1;
+  }
+  .blackcard:hover::before {
+    opacity: 1; /* Make the gradient visible on hover */
+  }
