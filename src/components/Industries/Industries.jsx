@@ -28,13 +28,13 @@ const industriesWithIcons = [
 ];
 export const Industries = () => {
   return (
-    <section className="p-20 bg-black" id="services">
+    <section className="p-3 lg:p-20 bg-black" id="services">
       <div className="py-12 flex flex-col items-center">
         <h4 className="text-4xl font-roboto text-center font-bold header-gradient">Industries Covered</h4>
         <p className="text-center mt-2 lg:max-w-[40%] text-white">Our Partnerships Have Transformed How You Experience These Global Leaders</p>
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-start">
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
         {industriesWithIcons.map((industry, id) => {
           return (
             <div key={id} className="blackcard bg-[#171717]  flex flex-col p-6 rounded-lg justify-center items-center gap-8 w-[170px] h-[170px] text-white">

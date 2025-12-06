@@ -82,3 +82,22 @@ export const webtechData = [
         icon:'wordpress'
     },
 ]
+
+export const customerReviews = [
+    {
+desc:'Working with dynamicsinfosolution has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support. They took the time to understand our unique needs and developed a tailored solution that exceeded our expectations.',
+imgsrc:'aleksi'
+    },
+    {
+desc:'Working with dynamicsinfosolution has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support. They took the time to understand our unique needs and developed a tailored solution that exceeded our expectations.',
+imgsrc:'jerry'
+    },
+    {
+desc:'Working with dynamicsinfosolution has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support. They took the time to understand our unique needs and developed a tailored solution that exceeded our expectations.',
+imgsrc:'kay'
+    },
+    {
+desc:'Working with dynamicsinfosolution has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support. They took the time to understand our unique needs and developed a tailored solution that exceeded our expectations.',
+imgsrc:'maya'
+    }
+]

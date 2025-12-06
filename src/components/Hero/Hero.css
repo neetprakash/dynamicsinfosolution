@@ -69,3 +69,15 @@ animation: move 2s infinite;
     transform: translate(0, -0px);
   }
 }
+@media screen and (max-width: 640px) {
+  .Typewriter .Typewriter__wrapper{
+    font-size: 3rem;
+    /* font-weight: 600; */
+}
+.Typewriter__cursor{
+  font-size: 24px;
+}
+.title{
+  font-size: 4rem;
+}
+}

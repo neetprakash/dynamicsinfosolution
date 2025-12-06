@@ -19,7 +19,7 @@ export const Hero = () => {
         />
 
         <div className=" text-white z-1 relative flex h-full flex-col items-center justify-center">
-          <div className="max-w-[80%]">
+          <div className="px-3 lg:max-w-[80%]">
             <img
               src={getImageUrl("hero/Icon1.svg")}
               alt="Hero image of me"
@@ -46,11 +46,11 @@ export const Hero = () => {
                 Graphics
               </h1> */}
 
-            <div className="flex items-center justify-between max-w-[80%]">
+            <div className="flex items-center justify-between max-w-[80%] flex-wrap lg:flex-nowrap">
 
               <h1 className="font-quantico title">Agency</h1>
 
-              <div className="max-w-[40%]">
+              <div className="lg:max-w-[40%]">
                 <p>From traditional PR and thought leadership campaigns to storytelling and creative social media management we’ve got you covered.</p>
               </div>
             </div>
